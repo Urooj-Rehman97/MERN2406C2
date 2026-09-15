@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
+import './Dashboard.css'
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -9,7 +10,7 @@ const Dashboard = () => {
     navigate("/login")
   }
   return (
-    <div>
+    <div className='main-content'>
       <h1>Admin Dashboard...</h1>
       <button className='mt-3 btn btn-danger' onClick={Logout}>Logout</button>
     </div>

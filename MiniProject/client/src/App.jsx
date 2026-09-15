@@ -6,6 +6,10 @@ import Layout from './Components/Layout';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Dashboard from './AdminPages/Dashboard';
+import AdminLayout from './Components/AdminLayout';
+import AddProduct from './AdminPages/AddProduct';
+import Products from './AdminPages/Products';
+import EditProduct from './AdminPages/EditProduct';
 
 
 const App = () => {
@@ -16,7 +20,9 @@ const App = () => {
       children:[
        { path: "/",
         Component: Home
-      }
+      },
+   
+     
       ]
     },
     ,
@@ -30,8 +36,28 @@ const App = () => {
       },
       {
         path: "/dashboard",
-        Component: Dashboard
-      }
+        Component: AdminLayout,
+        children:[
+          {
+            index: true,
+            Component: Dashboard
+          },
+          {
+            path: "addproduct",
+            Component: AddProduct
+          },
+          {
+            path: "getproducts",
+            Component: Products
+          },
+          {
+            path: "editproduct/:id",
+            Component: EditProduct
+          }
+       
+        ]
+      },
+
   ]);
   return   <RouterProvider router={router} />;
 }
