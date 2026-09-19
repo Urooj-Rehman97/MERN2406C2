@@ -10,6 +10,7 @@ import AdminLayout from './Components/AdminLayout';
 import AddProduct from './AdminPages/AddProduct';
 import Products from './AdminPages/Products';
 import EditProduct from './AdminPages/EditProduct';
+import Contact from './Pages/Contact/Contact';
 
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
        { path: "/",
         Component: Home
       },
+      {
+        path: "contact",
+        Component: Contact
+      }
    
      
       ]
